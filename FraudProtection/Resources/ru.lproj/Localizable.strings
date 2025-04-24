@@ -1,0 +1,56 @@
+// Common
+"app_name" = "Защита от мошенников";
+
+// Onboarding
+"welcome_to_app" = "Добро пожаловать в Защиту от мошенников";
+"select_language" = "Выберите предпочитаемый язык";
+"get_started" = "Начать";
+
+// Auth
+"welcome_back" = "С возвращением";
+"create_account" = "Создать аккаунт";
+"username" = "Имя пользователя";
+"password" = "Пароль";
+"login" = "Войти";
+"register" = "Регистрация";
+"dont_have_account" = "Нет аккаунта? Зарегистрируйтесь";
+"already_have_account" = "Уже есть аккаунт? Войти";
+"please_fill_fields" = "Пожалуйста, заполните все поля";
+"auth_failed" = "Ошибка аутентификации";
+"registration_failed" = "Ошибка регистрации";
+"logout" = "Выйти";
+"logout_confirmation" = "Подтверждение выхода";
+"logout_message" = "Вы уверены, что хотите выйти?";
+"cancel" = "Отмена";
+"logged_in_as" = "Вы вошли как";
+
+// Posts
+"posts" = "Посты";
+"latest_posts" = "Последние посты";
+"no_posts" = "Нет доступных постов";
+"retry" = "Повторить";
+"verified" = "Подтверждено";
+"invalid_url" = "Неверный URL";
+
+// Settings
+"settings" = "Настройки";
+"language" = "Язык";
+"appearance" = "Внешний вид";
+"dark_mode" = "Темный режим";
+"light_mode" = "Светлый режим";
+"system" = "Системный";
+
+// Errors
+"unknown_error" = "Произошла неизвестная ошибка";
+"decoding_error" = "Ошибка обработки ответа сервера";
+"network_error" = "Ошибка сети";
+"server_error" = "Ошибка сервера";
+
+// Time formats
+"time_minutes_ago" = "%d минут назад";
+"time_hours_ago" = "%d часов назад";
+"time_days_ago" = "%d дней назад";
+"time_weeks_ago" = "%d недель назад";
+"time_months_ago" = "%d месяцев назад";
+"time_years_ago" = "%d лет назад";
+"time_just_now" = "только что"; 

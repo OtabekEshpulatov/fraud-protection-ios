@@ -1,0 +1,65 @@
+// Common
+"app_name" = "Fraud Protection";
+
+// Onboarding
+"welcome_to_app" = "Welcome to Fraud Protection";
+"select_language" = "Select your preferred language";
+"get_started" = "Get Started";
+
+// Auth
+"welcome_back" = "Welcome Back";
+"create_account" = "Create Account";
+"username" = "Username";
+"password" = "Password";
+"login" = "Login";
+"register" = "Register";
+"dont_have_account" = "Don't have an account? Register";
+"already_have_account" = "Already have an account? Login";
+"please_fill_fields" = "Please fill in all fields";
+"auth_failed" = "Authentication failed";
+"registration_failed" = "Registration failed";
+"logout" = "Logout";
+"logout_confirmation" = "Logout Confirmation";
+"logout_message" = "Are you sure you want to logout?";
+"cancel" = "Cancel";
+"logged_in_as" = "Logged in as";
+
+// Posts
+"posts" = "Posts";
+"latest_posts" = "Latest Posts";
+"no_posts" = "No posts available";
+"retry" = "Retry";
+"verified" = "Verified";
+"invalid_url" = "Invalid URL";
+
+// Settings
+"settings" = "Settings";
+"language" = "Language";
+"appearance" = "Appearance";
+"dark_mode" = "Dark Mode";
+"light_mode" = "Light Mode";
+"system" = "System";
+"account" = "Account";
+"sign_in" = "Sign In";
+"sign_out" = "Sign Out";
+"storage" = "Storage";
+"clear_cache" = "Clear Cache";
+"clear_cache_description" = "This will clear all cached data and local storage, including your language preferences.";
+"clear_cache_confirmation" = "Clear Cache";
+"clear_cache_warning" = "Are you sure you want to clear all cached data? This action cannot be undone.";
+"clear" = "Clear";
+
+// Errors
+"unknown_error" = "An unknown error occurred";
+"decoding_error" = "Error processing server response";
+"network_error" = "Network error";
+"server_error" = "Server error";
+
+// Time formats
+"time_minutes_ago" = "%d minutes ago";
+"time_hours_ago" = "%d hours ago";
+"time_days_ago" = "%d days ago";
+"time_weeks_ago" = "%d weeks ago";
+"time_months_ago" = "%d months ago";
+"time_years_ago" = "%d years ago";
+"time_just_now" = "just now"; 

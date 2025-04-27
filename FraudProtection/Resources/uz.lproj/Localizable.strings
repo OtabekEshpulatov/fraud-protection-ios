@@ -30,6 +30,7 @@
 "retry" = "Qayta urinish";
 "verified" = "Tasdiqlangan";
 "invalid_url" = "Noto'g'ri URL";
+"similar_posts" = "O'xshash postlar";
 
 // Settings
 "settings" = "Sozlamalar";

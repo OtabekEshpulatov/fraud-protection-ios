@@ -62,4 +62,7 @@
 "time_weeks_ago" = "%d weeks ago";
 "time_months_ago" = "%d months ago";
 "time_years_ago" = "%d years ago";
-"time_just_now" = "just now"; 
+"time_just_now" = "just now";
+
+// New translations
+"similar_posts" = "Related Posts"; 

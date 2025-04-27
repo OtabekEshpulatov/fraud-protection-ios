@@ -17,15 +17,20 @@ class PostDetailViewModel: ObservableObject {
         error = nil
         
         do {
-            let url = URL(string: "\(APIConstants.baseURL)/posts/\(postId)/similar")!
-            let request = URLRequest(url: url)
+            var components = URLComponents(string: "\(APIConstants.baseURL)\(APIConstants.similarPosts)")!
+            components.queryItems = [
+                URLQueryItem(name: "postId", value: postId),
+                URLQueryItem(name: "limit", value: "5")
+            ]
             
-            let (data, _) = try await URLSession.shared.data(for: request)
+            let url = components.url!
+            let (data, _) = try await URLSession.shared.data(from: url)
             let posts = try JSONDecoder().decode([Post].self, from: data)
             
             similarPosts = posts
         } catch {
             self.error = error.localizedDescription
+            print("Error fetching similar posts: \(error)")
         }
         
         isLoading = false

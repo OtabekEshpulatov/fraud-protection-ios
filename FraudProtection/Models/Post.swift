@@ -10,6 +10,7 @@ struct Post: Identifiable, Codable {
     let createdDate: TimeInterval
     let views: Int?
     let comments: Int?
+    let tags: [String]
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -21,6 +22,7 @@ struct Post: Identifiable, Codable {
         case createdDate = "createdDate"
         case views
         case comments
+        case tags
     }
     
     var date: Date {

@@ -4,7 +4,6 @@ import AVKit
 struct PostDetailView: View {
     let post: Post
     @StateObject private var viewModel: PostDetailViewModel
-    @Environment(\.dismiss) private var dismiss
     
     init(post: Post) {
         self.post = post
@@ -49,8 +48,13 @@ struct PostDetailView: View {
                                     }
                                 }
                                 
-                                if let region = post.region {
-                                    Text(region)
+                                HStack(spacing: 8) {
+                                    if let region = post.region {
+                                        Text(region)
+                                            .font(.caption)
+                                            .foregroundColor(.secondary)
+                                    }
+                                    Text(post.formattedDate)
                                         .font(.caption)
                                         .foregroundColor(.secondary)
                                 }
@@ -58,17 +62,11 @@ struct PostDetailView: View {
                         }
                         
                         Spacer()
-                        
-                        // Dismiss button
-                        Button(action: { dismiss() }) {
-                            Image(systemName: "xmark.circle.fill")
-                                .font(.title2)
-                                .foregroundColor(.gray)
-                        }
                     }
                 }
                 .padding(.horizontal)
                 .padding(.top)
+                .padding(.bottom)
                 .background(Color(UIColor.systemBackground))
                 
                 // Post content
@@ -86,20 +84,42 @@ struct PostDetailView: View {
                         
                         Text(post.body)
                             .font(.body)
-                        
-                        // Date
-                        Text(post.formattedDate)
-                            .font(.caption)
-                            .foregroundColor(.secondary)
                     }
                     .padding(.horizontal)
+                    
+                    // Tags section
+                    if !post.tags.isEmpty {
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack {
+                                ForEach(post.tags, id: \.self) { tag in
+                                    Text(tag)
+                                        .font(.caption)
+                                        .padding(.horizontal, 10)
+                                        .padding(.vertical, 4)
+                                        .background(Color.blue.opacity(0.1))
+                                        .foregroundColor(.blue)
+                                        .cornerRadius(8)
+                                }
+                            }
+                            .padding(.horizontal)
+                        }
+                        .padding(.bottom, 8)
+                    }
+                    
+                    // Divider before similar posts
+                    Divider()
+                        .padding(.horizontal)
+                        .padding(.bottom, 8)
                     
                     // Similar posts section
                     if !viewModel.similarPosts.isEmpty {
                         VStack(alignment: .leading, spacing: 12) {
                             Text("similar_posts".localized)
-                                .font(.headline)
+                                .font(.title3)
+                                .foregroundColor(.secondary)
                                 .padding(.horizontal)
+                                .lineLimit(nil)
+                                .fixedSize(horizontal: false, vertical: true)
                             
                             ScrollView(.horizontal, showsIndicators: false) {
                                 HStack(spacing: 16) {
@@ -117,7 +137,6 @@ struct PostDetailView: View {
             }
         }
         .navigationBarHidden(true)
-        .toolbar(.hidden, for: .tabBar)
         .task {
             await viewModel.fetchSimilarPosts()
         }
@@ -128,16 +147,33 @@ struct SimilarPostCard: View {
     let post: Post
     
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 8) {
             if !post.mediaUrls.isEmpty {
                 MediaSliderView(mediaUrls: post.mediaUrls, height: 120)
             }
             
             Text(post.title)
-                .font(.headline)
-                .lineLimit(2)
+                .font(.subheadline)
+                .lineLimit(3)
+
+                .fixedSize(horizontal: false, vertical: true)
+            
+            Spacer()
+            
+            HStack {
+                if let region = post.region {
+                    Text(region)
+                        .font(.caption2)
+                        .foregroundColor(.secondary)
+                }
+                Spacer()
+                Text(post.formattedDate)
+                    .font(.caption2)
+                    .foregroundColor(.secondary)
+            }
         }
-        .frame(width: 200)
+        .frame(width: 200, height: 200, alignment: .bottom)
+        .padding()
     }
 }
 
@@ -157,7 +193,8 @@ struct SimilarPostCard: View {
             region: "New York",
             createdDate: Date().timeIntervalSince1970,
             views: 42,
-            comments: 5
+            comments: 5,
+            tags: ["Test", "SwiftUI", "Preview"]
         ))
     }
 } 

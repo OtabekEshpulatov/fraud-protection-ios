@@ -10,7 +10,7 @@ enum AuthError: Error {
 @MainActor
 class AuthService: ObservableObject {
     static let shared = AuthService()
-    private let baseURL = "http://localhost:8080/api/v1"
+    private let baseURL = "https://otabekjan.com/api/v1"
     private let tokenManager = TokenManager.shared
     private let userPreferences = UserPreferencesManager.shared
     

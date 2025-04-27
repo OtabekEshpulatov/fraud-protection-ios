@@ -20,7 +20,7 @@ enum OAuth2Error: Error {
 }
 
 class OAuth2Service {
-    private let baseURL = "http://localhost:8080"
+    private let baseURL = "https://otabekjan.com"
     private let clientId = "my-client"
     private let clientSecret = "my-secret"
     

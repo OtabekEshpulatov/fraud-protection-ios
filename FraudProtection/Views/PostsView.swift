@@ -4,7 +4,7 @@ struct PostsView: View {
     @StateObject private var viewModel = PostsViewModel()
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             Group {
                 if viewModel.isLoading && viewModel.posts.isEmpty {
                     ProgressView()
@@ -39,8 +39,7 @@ struct PostsView: View {
                             await viewModel.loadMoreIfNeeded(currentPost: post)
                         }
                     }
-                        .listStyle(InsetGroupedListStyle())
-
+                    .listStyle(InsetGroupedListStyle())
                     .refreshable {
                         await viewModel.refresh()
                     }

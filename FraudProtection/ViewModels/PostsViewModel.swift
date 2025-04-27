@@ -50,10 +50,9 @@ class PostsViewModel: ObservableObject {
         error = nil
         
         do {
-            var components = URLComponents(string: "http://localhost:8080/api/v1/posts/latest")!
+            var components = URLComponents(string: "\(APIConstants.baseURL)\(APIConstants.posts)")!
             components.queryItems = [
-                URLQueryItem(name: "page", value: String(currentPage)),
-                URLQueryItem(name: "size", value: "10")
+                URLQueryItem(name: "limit", value: "10")
             ]
             
             let url = components.url!

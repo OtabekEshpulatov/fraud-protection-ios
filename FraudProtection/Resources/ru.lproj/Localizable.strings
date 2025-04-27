@@ -53,4 +53,7 @@
 "time_weeks_ago" = "%d недель назад";
 "time_months_ago" = "%d месяцев назад";
 "time_years_ago" = "%d лет назад";
-"time_just_now" = "только что"; 
+"time_just_now" = "только что";
+
+// New translations
+"similar_posts" = "Похожие публикации"; 

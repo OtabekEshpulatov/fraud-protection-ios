@@ -2,11 +2,11 @@ import Foundation
 
 struct APIError: Codable, LocalizedError {
     let message: String?
-    let friendlyResponse: String?
+    let friendlyMessage: String?
     let code: String?
     
     var errorDescription: String? {
-        return friendlyResponse ?? message ?? "unknown_error".localized
+        return friendlyMessage ?? message ?? "unknown_error".localized
     }
 }
 

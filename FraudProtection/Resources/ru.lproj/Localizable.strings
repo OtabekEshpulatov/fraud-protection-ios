@@ -1,8 +1,9 @@
 // Common
 "app_name" = "Защита от мошенников";
-
+"social_media" = "Социальные сети";
+"alerts" = "Оповещения";
 // Onboarding
-"welcome_to_app" = "Добро пожаловать в Защиту от мошенников";
+"welcome_to_app" = "Добро пожаловать в Fraud Shield";
 "select_language" = "Выберите предпочитаемый язык";
 "get_started" = "Начать";
 
@@ -57,3 +58,11 @@
 
 // New translations
 "similar_posts" = "Похожие публикации"; 
+"report_success_message" = "Ваше сообщение об инциденте успешно отправлено. После проверки модераторами оно скоро будет опубликовано онлайн.";
+"select_media" = "Выбрать фото/видео";
+
+// Add these lines
+"error_username_required" = "Требуется имя пользователя";
+"error_password_required" = "Требуется пароль";
+"error_passwords_dont_match" = "Пароли не совпадают";
+"error_region_required" = "Пожалуйста, выберите регион";

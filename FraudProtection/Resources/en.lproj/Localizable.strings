@@ -1,8 +1,9 @@
 // Common
 "app_name" = "Fraud Protection";
-
+"social_media" = "Social Media";
+"alerts" = "Alerts";
 // Onboarding
-"welcome_to_app" = "Welcome to Fraud Protection";
+"welcome_to_app" = "Welcome to Fraud Shield";
 "select_language" = "Select your preferred language";
 "get_started" = "Get Started";
 
@@ -48,6 +49,9 @@
 "clear_cache_confirmation" = "Clear Cache";
 "clear_cache_warning" = "Are you sure you want to clear all cached data? This action cannot be undone.";
 "clear" = "Clear";
+"notifications" = "Notifications";
+"show_foreground_notifications" = "Show Notifications in Foreground";
+"show_foreground_notifications_description" = "When enabled, notifications will be shown even when the app is open.";
 
 // Errors
 "unknown_error" = "An unknown error occurred";
@@ -66,3 +70,12 @@
 
 // New translations
 "similar_posts" = "Related Posts"; 
+
+"report_success_message" = "Your report has been sent successfully. Once it's verified by our moderators, it'll be live online soon.";
+
+"select_media" = "Select Photos/Videos";
+
+"error_username_required" = "Username is required";
+"error_password_required" = "Password is required";
+"error_passwords_dont_match" = "Passwords do not match";
+"error_region_required" = "Please select a region";

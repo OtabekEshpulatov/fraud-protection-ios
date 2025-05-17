@@ -24,6 +24,11 @@ actor StorageManager {
         saveCachedPosts()
     }
     
+    func clearPostsCache(){
+        postsCache.removeAll()
+        defaults.removeObject(forKey: postsCacheKey)
+    }
+    
     func getCachedPosts() -> [Post] {
         Array(postsCache.values).sorted { $0.createdDate > $1.createdDate }
     }

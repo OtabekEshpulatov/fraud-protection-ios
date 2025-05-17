@@ -1,3 +1,11 @@
+//
+//  LoginView.swift
+//  FraudProtection
+//
+//  Created by kebato OS on 05/05/25.
+//
+
+
 // ... existing code ...
 // FraudProtection/Views/LoginView.swift
 
@@ -13,8 +21,11 @@ struct LoginView: View {
 
     var body: some View {
         NavigationView {
-            Form {
+            Form  {
                 TextField("Username", text: $username)
+                    .autocorrectionDisabled(true)
+                    .autocapitalization(.none) // For iOS 14 and earlier
+
                 SecureField("Password", text: $password)
                 if let errorMessage = errorMessage {
                     Text(errorMessage).foregroundColor(.red)
@@ -27,9 +38,36 @@ struct LoginView: View {
                             errorMessage = "Login failed. Please check your credentials."
                         }
                     }
+                }.frame(maxWidth: .infinity)
+                    .padding()
+                
+                Section {
+                    HStack {
+                        Text("Not registered?")
+                        HStack {
+                            Button{
+                                
+                            }label: {
+                                Text("Register")
+                            }
+                        
+                        }
+                        .background(
+                            NavigationLink(destination: RegistrationView()) {
+                                EmptyView()
+                            }
+                            .opacity(0)
+                        )
+                    }.frame(maxWidth: .infinity)
                 }
             }
             .navigationTitle("Login")
+            
+            
         }
     }
+}
+
+#Preview {
+    LoginView()
 }

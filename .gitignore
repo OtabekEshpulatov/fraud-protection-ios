@@ -1,6 +1,11 @@
 # Created by https://www.toptal.com/developers/gitignore/api/xcode,swift,cocoapods,swiftpackagemanager
 # Edit at https://www.toptal.com/developers/gitignore?templates=xcode,swift,cocoapods,swiftpackagemanager
 
+### Environment Variables ###
+.env
+.env.*
+!.env.example
+
 ### CocoaPods ###
 ## CocoaPods GitIgnore Template
 
@@ -98,11 +103,8 @@ Packages
 xcuserdata
 *.xcodeproj
 
-
 ### Xcode ###
-
 ## Xcode 8 and earlier
-
 .DS_Store
 
 ### Xcode Patch ###
@@ -113,5 +115,15 @@ xcuserdata
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
 **/xcshareddata/WorkspaceSettings.xcsettings
+
+### macOS ###
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+### Test Files ###
+*.apns
+test.apns
 
 # End of https://www.toptal.com/developers/gitignore/api/xcode,swift,cocoapods,swiftpackagemanager

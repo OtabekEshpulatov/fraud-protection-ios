@@ -1,65 +1,35 @@
+// ... existing code ...
+// FraudProtection/Views/LoginView.swift
+
 import SwiftUI
 
 struct LoginView: View {
-    @StateObject private var viewModel = AuthViewModel()
-    @State private var showRegistration = false
-    
+    @EnvironmentObject var authViewModel: AuthViewModel
+    @Environment(\.presentationMode) var presentationMode
+
+    @State private var username = ""
+    @State private var password = ""
+    @State private var errorMessage: String?
+
     var body: some View {
         NavigationView {
-            VStack(spacing: 20) {
-                Text("welcome_back".localized)
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                
-                VStack(spacing: 15) {
-                    TextField("username".localized, text: $viewModel.username)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .autocapitalization(.none)
-                    
-                    SecureField("password".localized, text: $viewModel.password)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
+            Form {
+                TextField("Username", text: $username)
+                SecureField("Password", text: $password)
+                if let errorMessage = errorMessage {
+                    Text(errorMessage).foregroundColor(.red)
                 }
-                .padding(.horizontal)
-                
-                if let error = viewModel.error {
-                    Text(error)
-                        .foregroundColor(.red)
-                        .font(.caption)
-                }
-                
-                Button(action: {
-                    Task {
-                        await viewModel.login()
+                Button("Login") {
+                    authViewModel.login(username: username, password: password) { success in
+                        if success {
+                            presentationMode.wrappedValue.dismiss()
+                        } else {
+                            errorMessage = "Login failed. Please check your credentials."
+                        }
                     }
-                }) {
-                    if viewModel.isLoading {
-                        ProgressView()
-                            .progressViewStyle(CircularProgressViewStyle(tint: .white))
-                    } else {
-                        Text("login".localized)
-                            .fontWeight(.semibold)
-                    }
-                }
-                .frame(maxWidth: .infinity)
-                .padding()
-                .background(Color.blue)
-                .foregroundColor(.white)
-                .cornerRadius(10)
-                .padding(.horizontal)
-                .disabled(viewModel.isLoading)
-                
-                NavigationLink(destination: RegistrationView(), isActive: $showRegistration) {
-                    Button("dont_have_account".localized) {
-                        showRegistration = true
-                    }
-                    .foregroundColor(.blue)
                 }
             }
-            .padding()
+            .navigationTitle("Login")
         }
     }
 }
-
-#Preview {
-    LoginView()
-} 

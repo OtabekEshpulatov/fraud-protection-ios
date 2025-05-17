@@ -1,0 +1,28 @@
+{
+  "configurations" : [
+    {
+      "id" : "B8F6E3A1-1234-5678-9ABC-DEF012345678",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:FraudProtection.xcodeproj",
+      "identifier" : "B8F6E3A1-1234-5678-9ABC-DEF012345678",
+      "name" : "FraudProtection"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:FraudProtection.xcodeproj",
+        "identifier" : "B8F6E3A1-1234-5678-9ABC-DEF012345678",
+        "name" : "FraudProtectionTests"
+      }
+    }
+  ],
+  "version" : 1
+} 

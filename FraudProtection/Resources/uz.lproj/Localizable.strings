@@ -1,0 +1,50 @@
+// Common
+"app_name" = "Firibdan himoya";
+
+// Onboarding
+"welcome_to_app" = "Firibdan himoyaga xush kelibsiz";
+"select_language" = "Tilni tanlang";
+"get_started" = "Boshlash";
+
+// Auth
+"welcome_back" = "Xush kelibsiz";
+"create_account" = "Hisob yaratish";
+"username" = "Foydalanuvchi nomi";
+"password" = "Parol";
+"login" = "Kirish";
+"register" = "Ro'yxatdan o'tish";
+"dont_have_account" = "Hisobingiz yo'qmi? Ro'yxatdan o'ting";
+"already_have_account" = "Hisobingiz bormi? Kirish";
+"please_fill_fields" = "Barcha maydonlarni to'ldiring";
+"auth_failed" = "Autentifikatsiya muvaffaqiyatsiz";
+"registration_failed" = "Ro'yxatdan o'tish muvaffaqiyatsiz";
+"logout" = "Chiqish";
+"logout_confirmation" = "Chiqishni tasdiqlash";
+"logout_message" = "Tizimdan chiqishni xohlaysizmi?";
+"cancel" = "Bekor qilish";
+"logged_in_as" = "Tizimga kirgan foydalanuvchi";
+
+// Posts
+"latest_posts" = "So'nggi postlar";
+"no_posts" = "Postlar mavjud emas";
+"retry" = "Qayta urinish";
+"verified" = "Tasdiqlangan";
+"invalid_url" = "Noto'g'ri URL";
+"similar_posts" = "O'xshash postlar";
+
+// Settings
+"settings" = "Sozlamalar";
+"language" = "Til";
+"appearance" = "Ko'rinish";
+"dark_mode" = "Qorong'u rejim";
+"light_mode" = "Yorug' rejim";
+"system" = "Tizim";
+
+// Time formats
+"time_minutes_ago" = "%d daqiqa oldin";
+"time_hours_ago" = "%d soat oldin";
+"time_days_ago" = "%d kun oldin";
+"time_weeks_ago" = "%d hafta oldin";
+"time_months_ago" = "%d oy oldin";
+"time_years_ago" = "%d yil oldin";
+"time_just_now" = "hozirgina"; 

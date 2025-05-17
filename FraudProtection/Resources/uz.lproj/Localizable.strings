@@ -1,8 +1,10 @@
 // Common
 "app_name" = "Firibdan himoya";
+"social_media" = "Ijtimoiy tarmoq";
+"alerts" = "Ogohlantirishlar";
 
 // Onboarding
-"welcome_to_app" = "Firibdan himoyaga xush kelibsiz";
+"welcome_to_app" = "Fruad Shield xush kelibsiz";
 "select_language" = "Tilni tanlang";
 "get_started" = "Boshlash";
 
@@ -48,3 +50,12 @@
 "time_months_ago" = "%d oy oldin";
 "time_years_ago" = "%d yil oldin";
 "time_just_now" = "hozirgina"; 
+
+"report_success_message" = "Hodisa haqida murojaatingiz muvaffaqiyatli yuborildi. Moderatorlarimiz tomonidan tasdiqlangach, tez orada onlayn tarzda ko'rsatiladi.";
+
+"select_media" = "Rasmlar/videolarni tanlang";
+
+"error_username_required" = "Foydalanuvchi nomi talab qilinadi";
+"error_password_required" = "Parol talab qilinadi";
+"error_passwords_dont_match" = "Parollar mos kelmaydi";
+"error_region_required" = "Iltimos, mintaqani tanlang";

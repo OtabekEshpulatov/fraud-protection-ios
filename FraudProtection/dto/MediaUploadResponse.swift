@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import Photos
+import PhotosUI
 
 struct MediaUploadResponse: Codable {
     let fileId: String
@@ -33,3 +35,4 @@ struct MediaFile: Identifiable {
     let id = UUID()
     let url: URL
 }
+

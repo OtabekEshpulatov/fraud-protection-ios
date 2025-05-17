@@ -4,7 +4,9 @@ struct RegisterRequest: Codable {
     let username: String
     let password: String
     let locale: String?
-    let profilePhotoLink: String?
+    let profilePhotoId: String?
+    let regionId: String?
+    let appleDeviceToken: String?
 }
 
 struct LoginRequest: Codable {

@@ -3,9 +3,11 @@ import SwiftUI
 struct PostsView: View {
     @StateObject private var viewModel = PostsViewModel()
     
+    @State private var reportSheetOpen: Bool = false
+    
     var body: some View {
         NavigationStack {
-            Group {
+            VStack {
                 if viewModel.isLoading && viewModel.posts.isEmpty {
                     ProgressView()
                 } else if let error = viewModel.error {
@@ -15,9 +17,9 @@ struct PostsView: View {
                             .multilineTextAlignment(.center)
                             .padding()
                         
-                        Button("retry".localized) {
+                        Button(error) {
                             Task {
-                                await viewModel.refresh()
+                                await viewModel.initPosts()
                             }
                         }
                         .padding()
@@ -35,13 +37,9 @@ struct PostsView: View {
                         NavigationLink(destination: PostDetailView(post: post)) {
                             PostRowView(post: post)
                         }
-                        .task {
-                            await viewModel.loadMoreIfNeeded(currentPost: post)
-                        }
                     }
-                    .listStyle(InsetGroupedListStyle())
                     .refreshable {
-                        await viewModel.refresh()
+                        await viewModel.initPosts()
                     }
                     .overlay(Group {
                         if viewModel.isLoading {
@@ -52,10 +50,22 @@ struct PostsView: View {
                     })
                 }
             }
+            .sheet(isPresented: $reportSheetOpen){
+                ReportView()
+            }
             .navigationTitle("latest_posts".localized)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar{
+                Button{
+                    reportSheetOpen = true
+                }label: {
+                    Label("", systemImage: "camera.fill")
+                }
+                
+            }
         }
         .task {
-            await viewModel.fetchPosts()
+            await viewModel.initPosts()
         }
     }
 }
@@ -112,11 +122,11 @@ struct PostRowView: View {
                 }
             }
             
-            Text(post.title)
+            Text(post.title ?? "")
                 .font(.title3)
                 .fontWeight(.bold)
             
-            Text(post.body)
+            Text(post.body ?? "")
                 .font(.body)
                 .lineLimit(3)
             
@@ -128,12 +138,14 @@ struct PostRowView: View {
                 if (post.views ?? 0) > 0 {
                     Label("\(post.views ?? 0)", systemImage: "eye")
                         .font(.caption)
+                        .labelStyle(NormalSpacingLabelStyle())
                         .foregroundColor(.secondary)
                 }
                 
                 if (post.comments ?? 0) > 0 {
                     Label("\(post.comments ?? 0)", systemImage: "message")
                         .font(.caption)
+                        .labelStyle(NormalSpacingLabelStyle())
                         .foregroundColor(.secondary)
                 }
             }

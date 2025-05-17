@@ -1,3 +1,7 @@
+import SwiftUI
+import UniformTypeIdentifiers
+import UIKit
+
 struct DocumentPicker: UIViewControllerRepresentable {
     var allowedContentTypes: [UTType]
     var onDocumentsPicked: ([URL]) -> Void

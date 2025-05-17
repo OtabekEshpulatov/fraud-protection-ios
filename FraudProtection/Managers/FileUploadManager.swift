@@ -27,14 +27,16 @@ class FileUploadManager {
         let fileData = try? Data(contentsOf: fileURL)
         
         if let fileData = fileData {
-            body.append("--\(boundary)\r\n")
-            body.append("Content-Disposition: form-data; name=\"file\"; filename=\"\(filename)\"\r\n")
-            body.append("Content-Type: application/octet-stream\r\n\r\n")
-            body.append(fileData)
-            body.append("\r\n")
+            body.append("--\(boundary)\r\n".data(using: .utf8)!) // Convert boundary string to Data
+            body.append("Content-Disposition: form-data; name=\"file\"; filename=\"\(filename)\"\r\n".data(using: .utf8)!) // Content-Disposition
+            body.append("Content-Type: application/octet-stream\r\n\r\n".data(using: .utf8)!) // Content-Type
+            
+            body.append(fileData) // Add actual file data
+            body.append("\r\n".data(using: .utf8)!) // End of file part
         }
         
-        body.append("--\(boundary)--\r\n")
+        body.append("--\(boundary)--\r\n".data(using: .utf8)!) // End of multipart body
+
         request.httpBody = body
         
         // Make the request

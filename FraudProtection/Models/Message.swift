@@ -1,3 +1,11 @@
+//
+//  Message.swift
+//  FraudProtection
+//
+//  Created by kebato OS on 05/05/25.
+//
+
+
 import Foundation
 
 struct Message: Identifiable {

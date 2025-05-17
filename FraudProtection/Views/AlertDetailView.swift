@@ -1,3 +1,11 @@
+//
+//  AlertDetailView.swift
+//  FraudProtection
+//
+//  Created by kebato OS on 06/05/25.
+//
+
+
 // ... existing code ...
 
 import SwiftUI
